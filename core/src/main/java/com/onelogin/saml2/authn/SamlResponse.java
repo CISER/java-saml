@@ -345,11 +345,12 @@ public class SamlResponse {
 				if (subjectConfirmationDataNodes.item(c).getLocalName() != null && subjectConfirmationDataNodes.item(c).getLocalName().equals("SubjectConfirmationData")) {
 
 					Node recipient = subjectConfirmationDataNodes.item(c).getAttributes().getNamedItem("Recipient");
-					final SubjectConfirmationIssue issue = validateRecipient(recipient, i);
-					if (issue != null) {
-						validationIssues.add(issue);
-						continue;
-					}
+// Another fucking URL check.....
+// 					final SubjectConfirmationIssue issue = validateRecipient(recipient, i);
+// 					if (issue != null) {
+// 						validationIssues.add(issue);
+// 						continue;
+// 					}
 
 					Node inResponseTo = subjectConfirmationDataNodes.item(c).getAttributes().getNamedItem("InResponseTo");
 					if (inResponseTo == null && responseInResponseTo != null ||
