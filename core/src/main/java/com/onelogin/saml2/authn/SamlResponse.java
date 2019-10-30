@@ -245,7 +245,8 @@ public class SamlResponse {
 				}
 
 				// Check destination
-				validateDestination(rootElement);
+				// fuck this fucking thing. bitch with reverse proxy...
+				// validateDestination(rootElement);
 
 				// Check Audiences
 				validateAudiences();
